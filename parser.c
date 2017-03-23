@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 
@@ -34,3 +35,18 @@ int  lex();
 #define DIV_OP 24 
 #define LEFT_PAREN 25 
 #define RIGHT_PAREN 26
+
+int main(int argc, char* argv[]){
+	char const* const fileName = argv[1]; //makes sure that main contains at least 1 argument (which will be the name of the file)
+	FILE* infile; 
+	infile = fopen(fileName, "r"); //opens file for reading
+	char line[1024]; //sets line size to 1024; max number of characters that can be read in per line
+
+	while (fgets(line, sizeof(line), infile)) //reading in individual line
+	{
+		printf("%s", line); //printing out line that was read in
+	}
+
+	fclose(infile); //closes file 
+	return 0;
+}
