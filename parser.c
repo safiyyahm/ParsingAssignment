@@ -237,3 +237,8 @@ parenthesis */
   	printf("Exit <factor>\n");
 }  /* End of function factor */
 
+void error() //my implementation of error function that was in the code
+{
+	pritnf("Syntax error: Incorrect character given, %s");
+	//print out the character
+}
