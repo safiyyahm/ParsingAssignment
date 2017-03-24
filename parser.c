@@ -46,6 +46,10 @@ int main(){
 	while (fgets(line, sizeof(line), infile)) //reading in individual line
 	{
 		printf("%s", line); //printing out line that was read in
+		getChar();
+		do{
+			lex();
+		} while (nextToken != EOF);
 	}
 
 	fclose(infile); //closes file 
@@ -240,6 +244,6 @@ parenthesis */
 
 void error() //my implementation of error function that was in the code
 {
-	printf("Syntax error: Incorrect character given, %c");
+	printf("Syntax error: Incorrect character given - %s");
 	//print out the character
 }
