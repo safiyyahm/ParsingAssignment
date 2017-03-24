@@ -17,6 +17,7 @@ void  addChar();
 void  getChar(); 
 void  getNonBlank();
 void expr();
+void error();
 void term();
 void factor(); 
 int  lex();
@@ -36,8 +37,8 @@ int  lex();
 #define LEFT_PAREN 25 
 #define RIGHT_PAREN 26
 
-int main(int argc, char* argv[]){
-	char const* const fileName = argv[1]; //makes sure that main contains at least 1 argument (which will be the name of the file)
+int main(){
+	static const char fileName[] = "file.txt";
 	FILE* infile; 
 	infile = fopen(fileName, "r"); //opens file for reading
 	char line[1024]; //sets line size to 1024; max number of characters that can be read in per line
@@ -239,6 +240,6 @@ parenthesis */
 
 void error() //my implementation of error function that was in the code
 {
-	pritnf("Syntax error: Incorrect character given, %s");
+	printf("Syntax error: Incorrect character given, %c");
 	//print out the character
 }
