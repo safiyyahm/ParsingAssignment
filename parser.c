@@ -50,6 +50,9 @@ int main(){
 		do{
 			lex();
 		} while (nextToken != EOF);
+		expr();
+		term();
+		factor();
 	}
 
 	fclose(infile); //closes file 
@@ -244,6 +247,6 @@ parenthesis */
 
 void error() //my implementation of error function that was in the code
 {
-	printf("Syntax error: Incorrect character given - %s");
+	printf("Syntax error: Incorrect character given.");
 	//print out the character
 }
